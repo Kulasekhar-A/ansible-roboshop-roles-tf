@@ -1,0 +1,29 @@
+- name: disable {{ component }}
+  ansible.builtin.command: dnf module disable {{ component }} -y
+
+- name: enable {{ component }}:7
+  ansible.builtin.command: dnf module enable {{ component }}:7 -y
+
+- name: install {{ component }}
+  ansible.builtin.dnf:
+    name: "{{ component }}"
+    state: present
+
+- name: allow remote connections
+  ansible.builtin.replace:
+    path: /etc/{{ component }}/{{ component }}.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: disable protected mode
+  ansible.builtin.lineinfile:
+    path: /etc/{{ component }}/{{ component }}.conf
+    line: 'protected-mode no'
+
+- name: start and enable {{ component }}
+  tags:
+  - deployment
+  ansible.builtin.service:
+    name: "{{ component }}"
+    enabled: yes
+    state: restarted
