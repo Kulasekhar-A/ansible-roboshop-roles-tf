@@ -23,7 +23,7 @@
   loop:
   - boto3
   - botocore
-  - pika
+  #- pika
 
 - name: create {{ component }} user
   community.rabbitmq.rabbitmq_user:
