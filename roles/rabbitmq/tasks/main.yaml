@@ -23,7 +23,10 @@
   loop:
   - boto3
   - botocore
-  #- pika
+
+- name: print environment
+  debug:
+    var: env
 
 - name: create {{ component }} user
   community.rabbitmq.rabbitmq_user:
