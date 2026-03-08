@@ -24,10 +24,6 @@
   - boto3
   - botocore
 
-- name: print environment
-  debug:
-    var: env
-
 - name: create {{ component }} user
   community.rabbitmq.rabbitmq_user:
     user: roboshop 
