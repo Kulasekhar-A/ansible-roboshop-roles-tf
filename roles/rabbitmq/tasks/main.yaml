@@ -26,7 +26,7 @@
 
 - name: print environment
   debug:
-    var: env
+    var: environment
 
 - name: create {{ component }} user
   community.rabbitmq.rabbitmq_user:
