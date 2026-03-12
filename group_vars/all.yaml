@@ -9,3 +9,4 @@ MYSQL_HOST: mysql-{{ env }}.annuru.online
 SHIPPING_HOST: shipping-{{ env }}.annuru.online
 RABBITMQ_HOST: rabbitmq-{{ env }}.annuru.online
 PAYMENT_HOST: payment-{{ env }}.annuru.online
+app_version: v3
