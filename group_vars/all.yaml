@@ -1,12 +1,12 @@
 ansible_user: ec2-user
 ansible_password: DevOps321
 MONGODB_HOST: mongodb-{{ env }}.annuru.online
-CATALOGUE_HOST: catalogue-{{ env }}.annuru.online
 REDIS_HOST: redis-{{ env }}.annuru.online
-USER_HOST: user-{{ env }}.annuru.online
-CART_HOST: cart-{{ env }}.annuru.online
 MYSQL_HOST: mysql-{{ env }}.annuru.online
-SHIPPING_HOST: shipping-{{ env }}.annuru.online
 RABBITMQ_HOST: rabbitmq-{{ env }}.annuru.online
-PAYMENT_HOST: payment-{{ env }}.annuru.online
+CATALOGUE_HOST: catalogue.backend-alb-{{ env }}.annuru.online
+USER_HOST: user.backend-alb-{{ env }}.annuru.online
+CART_HOST: cart.backend-alb-{{ env }}.annuru.online
+SHIPPING_HOST: shipping.backend-alb-{{ env }}.annuru.online
+PAYMENT_HOST: payment.backend-alb-{{ env }}.annuru.online
 app_version: v3
